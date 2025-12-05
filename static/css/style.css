@@ -1,0 +1,351 @@
+/* ===========================================================
+   GLOBAL DARK THEME — Black background, red headings, white text
+=========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --bg-main: #000000;
+  --bg-card: #111111;
+  --text-light: #ffffff;
+  --accent-red: #ff1a1a;
+  --accent-gray: #222222;
+  --accent-green: #1db954;
+  --font-main: 'Poppins', Arial, sans-serif;
+}
+
+/* ========== Base ========== */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* Headings = red */
+h1, h2, h3, h4, h5 {
+  color: var(--accent-red);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Normal text = white */
+p, span, label, td, th, li, a, input, select, textarea, small {
+  color: var(--text-light) !important;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  background-color: var(--bg-main) !important;
+  border-bottom: 1px solid var(--accent-red);
+  box-shadow: 0 2px 8px rgba(255, 26, 26, 0.2);
+}
+.navbar-brand {
+  color: var(--accent-red) !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.nav-link {
+  color: var(--text-light) !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-red) !important;
+}
+
+/* ========== Buttons ========== */
+.btn {
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.btn-primary {
+  background-color: var(--accent-red);
+  color: var(--text-light);
+}
+.btn-primary:hover {
+  background-color: #e60000;
+  box-shadow: 0 0 10px rgba(255, 26, 26, 0.5);
+}
+.btn-success {
+  background-color: var(--accent-green);
+  color: #fff;
+}
+.btn-success:hover {
+  background-color: #15963f;
+}
+
+/* ========== Cards ========== */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid #1f1f1f;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 15px rgba(255, 26, 26, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--text-light);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(255, 26, 26, 0.25);
+}
+
+/* ========== Tables (Default) ========== */
+.table {
+  color: var(--text-light);
+  background-color: var(--bg-card);
+}
+.table thead {
+  background-color: var(--accent-red);
+  color: #000;
+  font-weight: 600;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--accent-gray);
+}
+.table-striped tbody tr:hover {
+  background-color: #330000;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  border-top: 1px solid var(--accent-red);
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ========== Forms ========== */
+form {
+  background: var(--bg-card);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid var(--accent-red);
+  color: var(--text-light);
+}
+.form-control,
+.form-select {
+  background-color: #000;
+  color: var(--text-light);
+  border: 1px solid #333;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent-red);
+  box-shadow: none;
+}
+
+/* ========== Charts / Canvas ========== */
+canvas {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* ===========================================================
+   PLAYERS PAGE — Custom Slide 3 Styling
+=========================================================== */
+body.players-page {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Header */
+.players-page .players-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 1.5rem auto;
+}
+.players-page .players-header h1 {
+  color: var(--accent-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid var(--accent-red);
+  padding-bottom: 6px;
+  margin: 0;
+}
+
+/* Add Player button */
+.players-page #addPlayerBtn {
+  background-color: #1db954;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+.players-page #addPlayerBtn:hover {
+  background-color: #15963f;
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+}
+
+/* Center table */
+.players-page .table-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Final Table Style (white borders + spacing) */
+.players-page .players-table {
+  width: 90%;
+  max-width: 1000px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #0d0d0d;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  margin: 1.5rem auto 2rem auto;
+}
+
+.players-page .players-table th,
+.players-page .players-table td {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 18px;
+}
+
+.players-page .players-table thead {
+  background-color: #ff1a1a;
+  color: #000;
+  font-weight: 700;
+  border-bottom: 2px solid #ffffff;
+}
+
+.players-page .players-table tbody tr:nth-child(even) {
+  background-color: #141414;
+}
+.players-page .players-table tbody tr:nth-child(odd) {
+  background-color: #1a1a1a;
+}
+.players-page .players-table tbody tr:hover {
+  background-color: #330000;
+  transition: background-color 0.2s ease;
+}
+
+/* ===========================================================
+   ANALYTICS PAGE — Brighten labels, numbers, and legends
+=========================================================== */
+body.analytics-page {
+  background-color: #000 !important;
+  color: #ffffff !important;
+}
+
+/* All headings and paragraph text */
+.analytics-page h1,
+.analytics-page h2,
+.analytics-page h3,
+.analytics-page p,
+.analytics-page span,
+.analytics-page label,
+.analytics-page small {
+  color: #ffffff !important;
+}
+
+/* For SVG or Canvas chart text (axes, labels, legends) */
+.analytics-page text,
+.analytics-page svg text {
+  fill: #ffffff !important;
+  stroke: none !important;
+}
+
+/* Chart containers (visual polish) */
+.analytics-page canvas,
+.analytics-page svg {
+  background-color: #111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Chart legends / data labels */
+.analytics-page .legend,
+.analytics-page .chart-legend,
+.analytics-page .chart-label {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Add spacing between charts */
+.analytics-page .chart-container {
+  margin-bottom: 2rem;
+}
+
+/* ===========================================================
+   Responsive tweaks
+=========================================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Smooth transition for hover & links */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+/* Match Center specific look */
+
+body {
+  background-color: #000;    /* dark background like your screenshot */
+  color: #f9fafb;
+}
+
+.match-card {
+  background: #050608;
+  border-radius: 16px;
+  border: 1px solid #fbbf24; /* golden border */
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.18);
+  color: #e5e7eb;
+}
+
+.match-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.match-card .form-control,
+.match-card .form-select {
+  background-color: #020617;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+.match-card .form-control::placeholder {
+  color: #6b7280;
+}
+
+/* Optional: brighter "Live Match Center" title */
+h1.text-primary {
+  color: #00b4ff !important;
+}
+
+#addPlayerForm input {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #444 !important;
+}
+
+#addPlayerForm input:focus {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #ff1a1a !important;
+  box-shadow: none !important;
+}

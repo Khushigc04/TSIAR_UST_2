@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSIAR Sports Dashboard</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+
+  <style>
+    .dashboard-box {
+      background: #0d0d0d;
+      border-radius: 18px;
+      padding: 35px;
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      transition: 0.25s;
+    }
+    .dashboard-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 18px rgba(0,0,0,0.4);
+    }
+    .stat-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f0f0f0 !important;
+      margin-bottom: 6px;
+    }
+    .stat-value {
+      font-size: 42px;
+      font-weight: 700;
+      margin-top: 0px;
+    }
+    .icon-dashboard {
+      font-size: 42px;
+      margin-bottom: 8px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">TSIAR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="players.html">Players</a></li>
+          <li class="nav-item"><a class="nav-link" href="match.html">Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="match-list.html">Match List</a></li>
+          <li class="nav-item"><a class="nav-link" href="analytics.html">Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1 class="fw-bold text-center text-primary mb-5">Dashboard Overview</h1>
+
+    <!-- ICONS + NUMBERS -->
+    <div class="row text-center g-4">
+
+      <div class="col-md-4">
+        <div class="dashboard-box">
+          <span class="icon-dashboard">🧍</span>
+          <h4 class="stat-title">Total Players</h4>
+          <h2 class="stat-value text-success" id="totalPlayers">0</h2>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dashboard-box">
+          <span class="icon-dashboard">🏆</span>
+          <h4 class="stat-title">Total Matches</h4>
+          <h2 class="stat-value text-info" id="totalMatches">0</h2>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dashboard-box">
+          <span class="icon-dashboard">🔥</span>
+          <h4 class="stat-title">Live Matches</h4>
+          <h2 class="stat-value text-danger" id="liveMatches">0</h2>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white text-center py-3">
+    © 2025 TSIAR Sports
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function updateDashboard() {
+      const players = JSON.parse(localStorage.getItem("players") || "[]");
+      const matches = JSON.parse(localStorage.getItem("matches") || "[]");
+
+      document.getElementById("totalPlayers").textContent = players.length;
+      document.getElementById("totalMatches").textContent = matches.length;
+      document.getElementById("liveMatches").textContent = matches.filter(m => m.status === "live").length;
+    }
+    updateDashboard();
+  </script>
+</body>
+</html>

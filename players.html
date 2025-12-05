@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Players - TSIAR Sports</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Your main style sheet -->
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body class="players-page">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">TSIAR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="players.html">Players</a></li>
+          <li class="nav-item"><a class="nav-link" href="match.html">Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="analytics.html">Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Players Section -->
+  <main class="container my-5 players-page-content">
+    <div class="players-header text-center">
+      <h1 class="fw-bold">Players</h1>
+    </div>
+
+    <div class="text-center mb-4">
+      <button id="addPlayerBtn" class="btn btn-success">+ Add Player</button>
+    </div>
+
+    <div class="table-container">
+      <table class="players-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Sport</th>
+            <th>Position</th>
+            <th>Country</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="playersTableBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Add Player Modal -->
+  <div class="modal fade" id="addPlayerModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Player</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addPlayerForm">
+            <input id="name" class="form-control mb-2" placeholder="Name" required />
+            <input id="sport" class="form-control mb-2" placeholder="Sport" required />
+            <input id="position" class="form-control mb-2" placeholder="Position" required />
+            <input id="country" class="form-control mb-2" placeholder="Country" required />
+            <button type="submit" class="btn btn-success w-100 mt-2">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="static/js/players.js"></script>
+</body>
+</html>
